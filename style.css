@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap');
+
+:root {
+  --wine: #68152c;
+  --wine-dark: #3d0a19;
+  --wine-light: #8b2945;
+  --gold: #d8bd78;
+  --cream: #fffaf0;
+  --paper: #f7e7b8;
+  --ink: #2d1720;
+  --muted: #725e64;
+  --line: rgba(216, 189, 120, 0.55);
+  --white: #ffffff;
+  --success: #286647;
+  --danger: #a52a3a;
+  --shadow: 0 24px 60px rgba(44, 4, 20, 0.28);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Montserrat", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(216, 189, 120, 0.2), transparent 28%),
+    linear-gradient(150deg, #240711, #6a1730 55%, #2b0713);
+}
+
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.page-shell {
+  width: min(100%, 760px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 28px 16px;
+}
+
+.invitation-card {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 28px;
+  background: var(--cream);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 58px 32px 46px;
+  color: var(--cream);
+  text-align: center;
+  background:
+    linear-gradient(rgba(75, 9, 29, 0.88), rgba(101, 18, 44, 0.94)),
+    radial-gradient(circle at center, #a35968, #500d24);
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--paper);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 10vw, 5.4rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 0.92;
+}
+
+.hero h1 span { color: var(--gold); font-size: 0.72em; }
+
+.date {
+  margin: 18px 0 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 28px auto 20px;
+  color: var(--gold);
+}
+
+.ornament span { width: 80px; height: 1px; background: var(--gold); }
+.ornament b { font-size: 0.9rem; }
+
+.intro {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.35rem;
+  line-height: 1.55;
+}
+
+.search-section, .rsvp-panel, .confirmation-panel { padding: 42px 38px; }
+
+.search-section {
+  background: linear-gradient(180deg, #fff9ed, #f8e6b9);
+  border-bottom: 1px solid #e4cd91;
+}
+
+.search-section label {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--wine-dark);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.search-row { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
+
+input {
+  width: 100%;
+  min-width: 0;
+  padding: 15px 16px;
+  color: var(--ink);
+  border: 1px solid #cab98d;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255,255,255,0.82);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: var(--wine-light);
+  box-shadow: 0 0 0 4px rgba(104, 21, 44, 0.12);
+}
+
+.search-row button, .confirm-button {
+  padding: 15px 22px;
+  color: var(--white);
+  border: 0;
+  border-radius: 10px;
+  background: var(--wine);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  transition: transform 0.18s, background 0.18s;
+}
+
+.search-row button:hover, .confirm-button:hover { background: var(--wine-dark); transform: translateY(-1px); }
+
+.status-message {
+  min-height: 21px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.status-message.success { color: var(--success); font-weight: 600; }
+.status-message.error { color: var(--danger); font-weight: 600; }
+
+.rsvp-panel { padding: 0; color: var(--cream); background: var(--wine); }
+
+.seat-summary {
+  padding: 34px 24px;
+  color: var(--ink);
+  text-align: center;
+  background: linear-gradient(135deg, #f8e9bd, #e3c77f);
+}
+
+.seat-summary p {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.seat-summary strong {
+  display: block;
+  margin: 4px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.seat-summary span { font-family: "Cormorant Garamond", serif; font-size: 1.1rem; font-style: italic; }
+
+#rsvpForm { padding: 40px 38px 44px; }
+.section-heading h2, .confirmation-panel h2 { margin: 0 0 10px; font-family: "Cormorant Garamond", serif; font-size: 2rem; }
+.section-heading p { margin: 0 0 28px; color: #ead9de; font-family: "Cormorant Garamond", serif; font-size: 1.1rem; font-style: italic; }
+
+.guest-row {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.35);
+}
+
+.guest-number { color: var(--gold); font-family: "Cormorant Garamond", serif; font-size: 1.15rem; font-style: italic; }
+.guest-row input { border-color: rgba(255,255,255,0.25); color: var(--white); background: rgba(255,255,255,0.08); }
+.guest-row input::placeholder { color: #ddc7ce; }
+.guest-row input:disabled { color: var(--paper); opacity: 1; }
+
+.attendance-toggle { display: flex; align-items: center; gap: 9px; color: #f3e6e9; font-size: 0.78rem; }
+.attendance-toggle input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.toggle-track { position: relative; width: 46px; height: 26px; border-radius: 999px; background: #c9b5ba; transition: background 0.2s; }
+.toggle-track::after { content: ""; position: absolute; top: 4px; left: 4px; width: 18px; height: 18px; border-radius: 50%; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.25); transition: transform 0.2s; }
+.attendance-toggle input:checked + .toggle-track { background: var(--gold); }
+.attendance-toggle input:checked + .toggle-track::after { transform: translateX(20px); background: var(--wine); }
+
+.form-error { min-height: 20px; margin: 16px 0 0; color: #ffd0d7; font-size: 0.82rem; }
+.confirm-button { width: 100%; margin-top: 12px; background: var(--cream); color: var(--wine-dark); text-transform: uppercase; letter-spacing: 0.2em; }
+.confirm-button:hover { color: var(--white); }
+.link-button { display: block; margin: 18px auto 0; padding: 4px; color: inherit; border: 0; border-bottom: 1px solid currentColor; background: none; font-size: 0.78rem; }
+
+.confirmation-panel { text-align: center; background: #fffaf0; }
+.checkmark { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 18px; color: white; border-radius: 50%; background: var(--success); font-size: 2rem; }
+.confirmation-panel h2 { color: var(--wine-dark); }
+.confirmation-panel > p:not(.eyebrow) { color: var(--muted); font-family: "Cormorant Garamond", serif; font-size: 1.25rem; font-style: italic; }
+.confirmation-card { margin: 30px 0 18px; padding: 10px 24px; border: 1px solid #e1d3ad; border-radius: 14px; background: #fffdf7; text-align: left; }
+.confirmation-card div { display: flex; justify-content: space-between; gap: 24px; padding: 16px 0; border-bottom: 1px solid #eee3ca; }
+.confirmation-card div:last-child { border-bottom: 0; }
+.confirmation-card span { color: var(--muted); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.confirmation-card strong { color: var(--wine-dark); text-align: right; }
+.names-summary strong { white-space: pre-line; line-height: 1.7; }
+.confirmation-panel .confirm-button { color: white; background: var(--wine); }
+.confirmation-panel .link-button { color: var(--wine); }
+
+footer { padding: 20px; color: #7d6d70; text-align: center; background: #f1e7d3; font-size: 0.72rem; }
+.hidden { display: none !important; }
+
+@media (max-width: 620px) {
+  .page-shell { padding: 0; }
+  .invitation-card { border-radius: 0; }
+  .hero { padding: 46px 22px 38px; }
+  .search-section, .confirmation-panel { padding: 34px 22px; }
+  #rsvpForm { padding: 34px 22px 38px; }
+  .search-row { grid-template-columns: 1fr; }
+  .guest-row { grid-template-columns: 25px minmax(0, 1fr); }
+  .attendance-toggle { grid-column: 2; justify-self: end; }
+  .confirmation-card div { gap: 12px; }
+}

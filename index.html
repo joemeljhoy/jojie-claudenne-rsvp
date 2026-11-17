@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wedding RSVP prototype with controlled reserved seating.">
+  <title>Wedding RSVP Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="invitation-card" aria-labelledby="page-title">
+      <header class="hero">
+        <p class="eyebrow">Together with their families</p>
+        <h1 id="page-title">Jojie <span>&amp;</span> Claudenne</h1>
+        <p class="date">Wedding RSVP</p>
+        <div class="ornament" aria-hidden="true"><span></span><b>✦</b><span></span></div>
+        <p class="intro">Every seat is reserved with love.<br>Please confirm your attendance below.</p>
+      </header>
+
+      <section class="search-section" id="searchSection">
+        <label for="guestSearch">Primary guest name</label>
+        <div class="search-row">
+          <input id="guestSearch" type="text" autocomplete="name" placeholder="Type your first name or full name" aria-describedby="searchMessage">
+          <button id="searchButton" type="button">Find Invitation</button>
+        </div>
+        <p id="searchMessage" class="status-message" aria-live="polite">Enter the name written on the invitation.</p>
+      </section>
+
+      <section id="rsvpPanel" class="rsvp-panel hidden" aria-live="polite">
+        <div class="seat-summary">
+          <p>Seats reserved in your honor</p>
+          <strong id="seatCount">0</strong>
+          <span>Total seat(s), including the primary guest</span>
+        </div>
+
+        <form id="rsvpForm" novalidate>
+          <div class="section-heading">
+            <h2>Confirm Attendance</h2>
+            <p>Enter the names of the guests who will attend. Empty rows will be marked as not attending.</p>
+          </div>
+
+          <div id="guestRows" class="guest-rows"></div>
+          <p id="formError" class="form-error" role="alert"></p>
+
+          <button id="submitButton" class="confirm-button" type="submit">Confirm RSVP</button>
+          <button id="changeGuestButton" class="link-button" type="button">Search a different guest</button>
+        </form>
+      </section>
+
+      <section id="confirmationPanel" class="confirmation-panel hidden" aria-live="polite">
+        <div class="checkmark" aria-hidden="true">✓</div>
+        <p class="eyebrow">Thank you</p>
+        <h2>Your response has been received.</h2>
+        <p>We can’t wait to celebrate with you!</p>
+
+        <div class="confirmation-card">
+          <div><span>Primary guest</span><strong id="summaryPrimary"></strong></div>
+          <div><span>Reserved seats</span><strong id="summaryReserved"></strong></div>
+          <div><span>Attending</span><strong id="summaryAttending"></strong></div>
+          <div class="names-summary"><span>Guest name(s)</span><strong id="summaryNames"></strong></div>
+        </div>
+
+        <button id="editRsvpButton" class="confirm-button" type="button">Edit RSVP</button>
+        <button id="newSearchButton" class="link-button" type="button">Search another invitation</button>
+      </section>
+
+      <footer>
+        <p>Prototype only. Responses are saved on this device.</p>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
